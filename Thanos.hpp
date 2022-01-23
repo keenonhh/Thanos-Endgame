@@ -11,7 +11,7 @@
 #define THANOS_HPP
 
 #include <stdlib.h>
-
+#include <iostream>
 class Thanos
 {
 private:
@@ -20,11 +20,8 @@ private:
 	int attack;
 
 public:
-
+	// Set Thanos starting healt and attack power
 	Thanos();
-
-	// parameterized constructor to override Thanos base attack
-	Thanos(int);
 
 	// to get Thanos health
 	int getHealth();
@@ -37,7 +34,6 @@ public:
 
 	// get Thanos attack
 	int getAttack();
-	~Thanos();
 };
 
 #endif

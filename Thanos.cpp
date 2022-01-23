@@ -15,12 +15,7 @@ Thanos::Thanos()
 {
 	health = 100;
 	attack = (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1);
-}
-// Parameterized constructor that overrides Thanos base attack
-Thanos::Thanos(int gems)
-{
-	health = 100;
-	attack = (gems * (rand() % 6 + 1)) + ((rand() % 6 + 1) + (rand() % 6 + 1));
+	std::cout << "Thanos Starting power: " << attack << std::endl;
 }
 
 // sets the damage that the Avenger does to Thanos if Avenger roll is greater
@@ -33,7 +28,7 @@ void Thanos::damage(int dmgIn)
 // sets thanos attack based on the number of gems collects
 void Thanos::setAttack(int gem)
 {
-	int attack = (gem * (rand() % 6 + 1)) + ((rand() % 6 + 1) + (rand() % 6 + 1));
+	attack = (gem * (rand() % 6 + 1)) + ((rand() % 6 + 1) + (rand() % 6 + 1));
 }
 
 // gets his attack called in Avenger Space for battle function
@@ -47,7 +42,3 @@ int Thanos::getHealth()
 {
 	return health;
 }
-
-Thanos::~Thanos()
-{}
-

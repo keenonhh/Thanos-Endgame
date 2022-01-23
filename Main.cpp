@@ -23,10 +23,8 @@ int main()
 
 	// The goal of the game and premise
 	std::cout << "Welcome to THANOS ENDGAME" << std::endl << std::endl;
-	
 	std::cout << "You must battle the Avengers one by one and defeat them to take the " << std::endl;
 	std::cout << "Infinity Gems that they are protecting" << std::endl;
-	
 	std::cout << "Each Avenger has a different power level than the last but once you defeat them all " << std::endl;
 	std::cout << "and collect all the Infinity Gems" << std::endl;
 	std::cout << "you can bring balance to the Universe.... With a snap of you fingers..." << std::endl << std::endl;
@@ -36,11 +34,11 @@ int main()
 	std::cout << "You crash land your spaceship in the middle of The Avengers Headquarters," << std::endl;
 	std::cout << "the structural integrity has been compromised, and you have 20 steps to escape" << std::endl;
 	std::cout << "before the arc reactors vaporize everything inside including you and the Infinity Gems" << std::endl << std::endl;
-
 	std::cout << "You may choose your own path but remember 'Each Avenger has a different power level than the last' " << std::endl;
 
+	Thanos thanos;
 	// run Thanos EndGame
-	ThanosEndGame.runGame();
+	ThanosEndGame.runGame(thanos);
 
 	system("pause");
 	return 0;

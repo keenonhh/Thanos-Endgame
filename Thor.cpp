@@ -14,7 +14,7 @@ Thor::Thor()
 }
 
 // function to run battle with Thanos
-int Thor::battle()
+int Thor::battle(Thanos thanos)
 {
 	srand(time(NULL));
 	// roll for Thor and what the damage will be if greater than Thanos roll
@@ -77,8 +77,4 @@ int Thor::complete()
 	{
 		return 0;
 	}
-}
-
-Thor::~Thor()
-{
 }

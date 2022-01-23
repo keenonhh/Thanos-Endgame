@@ -27,9 +27,6 @@
 class EndGame
 {
 private:
-	// Thanos class object to call thanos class functions
-	Thanos thanos;
-
 	// Space class pointer objects for linking board spaces
 	Space* space1;
 	Space* space2;
@@ -40,9 +37,9 @@ private:
 
 public:
 	// contains function and contents to run the game
-	void runGame();
+	void runGame(Thanos thanos);
 
-	// sets up the game spaces wit hthe Avenger spaces
+	// sets up the game spaces with the Avenger spaces
 	void setSpaces();
 
 	// prints the board based on current game status 

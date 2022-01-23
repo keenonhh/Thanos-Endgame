@@ -14,7 +14,7 @@ Hawkeye::Hawkeye()
 }
 
 // function to run battle with Thanos
-int Hawkeye::battle()
+int Hawkeye::battle(Thanos thanos)
 {
 	srand(time(NULL));
 	// roll for hawkeye and what the damage will be if greater than Thanos roll
@@ -77,8 +77,4 @@ int Hawkeye::complete()
 	{
 		return 0;
 	}
-}
-
-Hawkeye::~Hawkeye()
-{
 }

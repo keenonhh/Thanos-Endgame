@@ -15,7 +15,7 @@
 // provides menu options to user based on current space Thanos is in
 Space* Space::menu(Space* currSpace)
 {
-	// Gives a number of mnu for user to input
+	// Gives a number of menu for user to input
 	int menuOption = 0;
 
 	// spaces Thanos has the option to move to based on current space 
@@ -36,7 +36,7 @@ Space* Space::menu(Space* currSpace)
 		std::cout << "\n" << menuOption << ". Go down the right hallway to " << newSpace->getName();
 	}
 
-	// provide option to move to the back spcae
+	// provide option to move to the back space
 	newSpace = currSpace->getBack();
 	if (newSpace != NULL)
 	{
@@ -81,15 +81,15 @@ Space* Space::menu(Space* currSpace)
 	}
 
 
-	// gets the current spce based on the user input
-	// if user selects otion one new space is the right one
+	// gets the current space based on the user input
+	// if user selects option one new space is the right one
 	newSpace = currSpace->getRight();
 	if (newSpace != NULL)
 	{
 		direction++;
 	}
 
-	// if user seslcts 2 the new space is the back one
+	// if user selects 2 the new space is the back one
 	if (direction != selection)
 	{
 		newSpace = currSpace->getBack();

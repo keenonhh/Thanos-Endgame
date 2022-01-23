@@ -14,7 +14,7 @@ Ironman::Ironman()
 }
 
 // function to run battle with Thanos
-int Ironman::battle()
+int Ironman::battle(Thanos thanos)
 {
 	srand(time(NULL));
 	// roll for ironman and what the damage will be if greater than Thanos roll
@@ -76,8 +76,4 @@ int Ironman::complete()
 	{
 		return 0;
 	}
-}
-
-Ironman::~Ironman()
-{
 }

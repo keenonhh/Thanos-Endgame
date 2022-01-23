@@ -14,7 +14,7 @@ HULK::HULK()
 }
 
 // function to run battle with Thanos
-int HULK::battle()
+int HULK::battle(Thanos thanos)
 {
 	srand(time(NULL));
 	// roll for hulke and what the damage will be if greater than Thanos roll
@@ -76,8 +76,4 @@ int HULK::complete()
 	{
 		return 0;
 	}
-}
-
-HULK::~HULK()
-{
 }

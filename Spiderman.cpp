@@ -14,7 +14,7 @@ Spiderman::Spiderman()
 }
 
 // function to run battle with Thanos
-int Spiderman::battle()
+int Spiderman::battle(Thanos thanos)
 {
 	srand(time(NULL));
 	// roll for spiderman and what the damage will be if greater than Thanos roll
@@ -78,8 +78,3 @@ int Spiderman::complete()
 		return 0;
 	}
 }
-
-Spiderman::~Spiderman()
-{
-}
-

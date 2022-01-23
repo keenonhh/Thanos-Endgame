@@ -12,7 +12,7 @@
 #include "EndGame.hpp"
 
 // runs the Thanos EndGame game by setting up board and printing stats
-void EndGame::runGame()
+void EndGame::runGame(Thanos thanos)
 {
 	// Links the game board spaces based on pointers
 	setSpaces();
@@ -43,7 +43,7 @@ void EndGame::runGame()
 	while (thanos.getHealth() > 0 && gauntlet.size() != 5 && step != 0)
 	{
 		// set damage equal to that of the roll of the avenger who space Thanos is on
-		damage = currSpace->battle();
+		damage = currSpace->battle(thanos);
 
 		// gems is the damage multiplier for Thanos attack equal to the number of gems in his gauntlet
 		gems = gauntlet.size();
@@ -55,14 +55,10 @@ void EndGame::runGame()
 		if (damage != 0)
 		{
 			thanos.damage(damage);
-			step--;
 		}
 
-		// if Thanos beats defender a step is still deducted
-		if (damage == 0)
-		{
-			step--;
-		}
+		// decrement steps whether Thanos wins battle or not
+		step--;
 
 		// Add a gem to Thanos Guantlet if he beat Avenger and he's not in the start room or going back to an already completed space
 		if (damage == 0 && currSpace != space1 && currSpace->complete() == 1)
@@ -95,7 +91,7 @@ void EndGame::runGame()
 		}
 	}
 
-	// If Thanos health reaches zero he lost to avnegers
+	// If Thanos health reaches zero he lost to avengers
 	if (thanos.getHealth() <= 0)
 	{
 		std::cout << "\n\nYou have been defeated by The Avengers!" << std::endl;

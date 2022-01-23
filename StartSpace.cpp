@@ -10,10 +10,6 @@
 
 #include "StartSpace.hpp"
 
-StartSpace::StartSpace()
-{
-}
-
 // mark the room as complete to start with
 int StartSpace::complete()
 {
@@ -21,11 +17,7 @@ int StartSpace::complete()
 }
 
 // start room doesn't have battle functionality
-int StartSpace::battle()
+int StartSpace::battle(Thanos thanos)
 {
 	return 0;
-}
-
-StartSpace::~StartSpace()
-{
 }

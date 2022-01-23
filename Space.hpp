@@ -21,11 +21,7 @@
 class Space
 {
 protected:
-	
-	// so that thanos class functions can be called on thanos in space classes
-	Thanos thanos;
-
-	// to set the avenger space as completed
+	// to set the avenger space as completed -- Probably change to bool
 	int defeated;
 
 	// to link the spaces and get name of space for menu printing
@@ -38,10 +34,10 @@ protected:
 public:
 
 	// function for battling Thanos
-	int virtual battle() = 0;
+	virtual int battle(Thanos thanos) = 0;
 
-	// function for setting space as complete
-	int virtual complete() = 0;
+	// function for setting space as complete -- Probably change to bool
+	virtual int complete() = 0;
 
 	// calls a menu based on the current space thanos is in
 	Space* menu(Space*);

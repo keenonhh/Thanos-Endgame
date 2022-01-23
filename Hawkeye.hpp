@@ -18,11 +18,9 @@ public:
 	Hawkeye();
 
 	// function for battling Thanos
-	int battle();
+	int battle(Thanos thanos);
 
 	// function for setting space as complete
 	int complete();
-
-	~Hawkeye();
 };
 #endif
