@@ -16,10 +16,9 @@ class StartSpace : public Space
 {
 public:
 	// function for battling Thanos
-	int battle(Thanos thanos);
+	int battle(Thanos thanos) { return 0; };
 
 	// function for setting space as complete
-	int complete();
+	int complete() { return 1; };
 };
 #endif
-

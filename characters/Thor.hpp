@@ -10,17 +10,15 @@
 #ifndef THOR_HPP
 #define THOR_HPP
 
-#include "Space.hpp"
+#include "Character.hpp"
 
-class Thor : public Space
+class Thor : public Character
 {
 public:
-	Thor();
+	// set thore attack based on attack multiplier
+	void setAttack(int);
 
-	// function for battling Thanos
-	int battle(Thanos thanos);
-
-	// function for setting space as complete
-	int complete();
+	int battle(Character *);
 };
+
 #endif

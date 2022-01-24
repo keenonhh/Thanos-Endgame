@@ -15,6 +15,7 @@
 #include <queue>
 #include <string>
 
+#include "Character.hpp"
 #include "Space.hpp"
 #include "Thanos.hpp"
 #include "Hawkeye.hpp"
@@ -37,7 +38,7 @@ private:
 
 public:
 	// contains function and contents to run the game
-	void runGame(Thanos thanos);
+	void runGame();
 
 	// sets up the game spaces with the Avenger spaces
 	void setSpaces();

@@ -10,30 +10,16 @@
 #ifndef THANOS_HPP
 #define THANOS_HPP
 
-#include <stdlib.h>
-#include <iostream>
-class Thanos
+#include "Character.hpp"
+
+class Thanos : public Character
 {
-private:
-	// base stats for thanos
-	int health;
-	int attack;
-
 public:
-	// Set Thanos starting healt and attack power
-	Thanos();
-
-	// to get Thanos health
-	int getHealth();
-
-	// set the damage Avenger did 
-	void damage(int);
-
 	// set thanos attack based on number of gems
 	void setAttack(int);
 
-	// get Thanos attack
-	int getAttack();
+	// Thanos battle is controlled by characters
+	int battle(Character*){};
 };
 
 #endif

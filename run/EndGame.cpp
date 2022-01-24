@@ -12,10 +12,25 @@
 #include "EndGame.hpp"
 
 // runs the Thanos EndGame game by setting up board and printing stats
-void EndGame::runGame(Thanos thanos)
+void EndGame::runGame()
 {
 	// Links the game board spaces based on pointers
 	setSpaces();
+
+	// Initialize each character
+	Hawkeye hawkeye;
+	Ironman ironman;
+	Spiderman spiderman;
+	Thor thor;
+	HULK hulk;
+	Thanos thanos;
+
+	Character *character_1 = &hawkeye;
+	Character *character_2 = &ironman;
+	Character *character_3 = &spiderman;
+	Character *character_4 = &thor;
+	Character *character_5 = &hulk;
+	Character *character_6 = &thanos;
 
 	// set the space pointer object to the current space
 	Space* currSpace;
@@ -120,15 +135,15 @@ void EndGame::setSpaces()
 	// allocates memory for the spaces as well as names them
 	space1 = new StartSpace();
 	space1->setName("Start Room");
-	space2 = new Hawkeye();
+	space2 = new Space();
 	space2->setName("Hawkeye Room");
-	space3 = new Spiderman();
+	space3 = new Space();
 	space3->setName("Spider-Man Room");
-	space4 = new Ironman();
+	space4 = new Space();
 	space4->setName("Ironman Room");
-	space5 = new HULK();
+	space5 = new Space();
 	space5->setName("HULK Room");
-	space6 = new Thor();
+	space6 = new Space();
 	space6->setName("Thor Room");
 
 

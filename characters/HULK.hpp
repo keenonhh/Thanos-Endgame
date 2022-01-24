@@ -10,19 +10,17 @@
 #ifndef HULK_HPP
 #define HULK_HPP
 
-#include "Space.hpp"
+#include "Character.hpp"
 
-class HULK : public Space
+class HULK : public Character
 {
 public:
-	HULK();
+	// set HULK attack based on attack multiplier
+	void setAttack(int);
 
-	// function for battling Thanos
-	int battle(Thanos thanos);
-
-	// function for setting space as complete
-	int complete();
+	int battle(Character *);
 };
+
 #endif
 
 

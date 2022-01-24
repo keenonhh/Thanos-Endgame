@@ -16,14 +16,9 @@
 #include <string>
 #include <time.h>
 
-#include "Thanos.hpp"
-
 class Space
 {
 protected:
-	// to set the avenger space as completed -- Probably change to bool
-	int defeated;
-
 	// to link the spaces and get name of space for menu printing
 	Space *fwd;
 	Space *back;
@@ -32,13 +27,6 @@ protected:
 	std::string name;
 	
 public:
-
-	// function for battling Thanos
-	virtual int battle(Thanos thanos) = 0;
-
-	// function for setting space as complete -- Probably change to bool
-	virtual int complete() = 0;
-
 	// calls a menu based on the current space thanos is in
 	Space* menu(Space*);
 

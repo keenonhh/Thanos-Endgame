@@ -1,5 +1,5 @@
-output: Main.o EndGame.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o StartSpace.o Thanos.o Thor.o
-	g++ Main.o EndGame.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o StartSpace.o Thanos.o Thor.o -o output
+output: Main.o EndGame.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o Thanos.o Thor.o
+	g++ Main.o EndGame.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o Thanos.o Thor.o -o output
 
 Main.o: Main.cpp
 	g++ -c Main.cpp
@@ -21,9 +21,6 @@ Space.o: Space.cpp Space.hpp
 
 Spiderman.o: Spiderman.cpp Spiderman.hpp
 	g++ -c Spiderman.cpp
-
-StartSpace.o: StartSpace.cpp StartSpace.hpp
-	g++ -c StartSpace.cpp
 
 Thanos.o: Thanos.cpp Thanos.hpp
 	g++ -c Thanos.cpp

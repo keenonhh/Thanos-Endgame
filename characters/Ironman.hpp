@@ -10,18 +10,15 @@
 #ifndef IRONMAN_HPP
 #define IRONMAN_HPP
 
-#include "Space.hpp"
+#include "Character.hpp"
 
-class Ironman : public Space
+class Ironman : public Character
 {
-
 public:
-	Ironman();
-	
-	// function for battling Thanos
-	int battle(Thanos thanos);
+	// set ironman attack based on attack multiplier
+	void setAttack(int);
 
-	// function for setting space as complete
-	int complete();
+	int battle(Character *);
 };
+
 #endif

@@ -10,17 +10,15 @@
 #ifndef SPIDERMAN_HPP
 #define SPIDERMAN_HPP
 
-#include "Space.hpp"
+#include "Character.hpp"
 
-class Spiderman : public Space
+class Spiderman : public Character
 {
 public:
-	Spiderman();
+	// set spiderman attack based on attack multiplier
+	void setAttack(int);
 
-	// function for battling Thanos
-	int battle(Thanos thanos);
-
-	// function for setting space as complete
-	int complete();
+	int battle(Character *);
 };
+
 #endif
