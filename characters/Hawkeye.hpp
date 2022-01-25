@@ -14,11 +14,13 @@
 
 class Hawkeye : public Character
 {
-public:
-	// set hawkeye attack based on attack multiplier
-	void setAttack(int);
+private:
+	bool defeated;
 
-	int battle(Character *);
+public:
+	Hawkeye();
+
+	int battle(Thanos thanos);
 };
 
 #endif

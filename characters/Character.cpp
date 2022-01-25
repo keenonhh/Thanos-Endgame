@@ -9,20 +9,14 @@
 
 #include "Character.hpp"
 
-// deducts the damage done from characters health
-void Character::setHealth(int dmgIn)
+// sets Character defeated status
+void Character::setDefeated(bool defeated)
 {
-	health = health - dmgIn;
+	defeated = this->defeated;
 }
 
-// gets attack power for character
-int Character::getAttack()
+// gets Character defeated status
+bool Character::getDefeated()
 {
-	return attack;
-}
-
-// gets Character Health for displaying stats
-int Character::getHealth()
-{
-	return health;
+	return defeated;
 }

@@ -14,11 +14,13 @@
 
 class Thor : public Character
 {
+private: 
+	bool defeated;
+	
 public:
-	// set thore attack based on attack multiplier
-	void setAttack(int);
+	Thor();
 
-	int battle(Character *);
+	int battle(Thanos thanos);
 };
 
 #endif

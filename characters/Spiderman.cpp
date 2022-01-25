@@ -1,55 +1,52 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
+** Program name:	CS162 Final_opponent_Endgame
 ** Author:	Keenon Hunsaker
 ** Date:	3/14/19
 ** Description: This is the Spiderman class function definition file that
-		contains the functions for spiderman to battle Thanos and 
-		set spider space to complete once Thanos wins the battle
+		contains the functions for spiderman to battle opponent and 
+		set spider space to complete once opponent wins the battle
 ******************************************************************************/
 
 #include "Spiderman.hpp"
 
 Spiderman::Spiderman()
 {
+	defeated = false; 
 }
 
-// function to run battle with Thanos
+// function to run battle with opponent
 int Spiderman::battle(Thanos thanos)
 {
 	srand(time(NULL));
-	// roll for spiderman and what the damage will be if greater than Thanos roll
+
+	// roll for spiderman and what the damage will be if greater than opponent roll
 	int spiderRoll = 0;
 
-	// thanos roll equal to his attack function
-	int thanosRoll = 0;
-
-	// damage by spiderman if spiderman roll greater than Thanos
-	int dam = 0;
-
-	// Thanos and spiderman battle as long as Thanos hasn't beat spiderman already
-	if (defeated == 0)
+	// opponent and spiderman battle as long as opponent hasn't beat spiderman already
+	if (!defeated)
 	{
-		// sets attack for Thanos and spiderman as random roll amount, Avenger attack is the unique element of each space 
+		// sets attack for opponent and spiderman as random roll amount, Avenger attack is the unique element of each space 
 		std::cout << "\nSpider-Man swings in on his web, prepare to battle" << std::endl;
-		thanosRoll = thanos.getAttack();
-		spiderRoll = rand() % 4 + 1 + rand() % 4 + 1 + rand() % 4 + 1 + rand() % 4 + 1;
+		int opponentRoll = thanos.getAttack();
+		spiderRoll = ((rand() % 4 + 1) + (rand() % 4 + 1) + (rand() % 4 + 1) + (rand() % 4 + 1));
 
 		// display the results of the rolls
-		std::cout << "Thanos attacks with a power of: " << thanosRoll << std::endl;
+		std::cout << "opponent attacks with a power of: " << opponentRoll << std::endl;
 		std::cout << "Spider-Man attacks with a power of: " << spiderRoll << std::endl;
 
-		// if Thanos roll greater print message
-		if (thanosRoll >= spiderRoll)
+		// if opponent roll greater print message
+		if (opponentRoll >= spiderRoll)
 		{
 			std::cout << "You defeated Spider-Man! You approach and take the Reality Gem from your foe" << std::endl << std::endl;
 			std::cout << "Reality Gem inserted into Gauntlet" << std::endl << std::endl;
+			defeated = true;
+			spiderRoll = 0;
 		}
 
-		// if Thanos roll greater print message
-		else if (thanosRoll < spiderRoll)
+		// if opponent roll greater print message
+		else if (opponentRoll < spiderRoll)
 		{
 			std::cout << "Spider-Man wraps you in his web, you lose " << spiderRoll << " health" << std::endl;
-			dam = spiderRoll;
 		}
 	}
 
@@ -60,21 +57,5 @@ int Spiderman::battle(Thanos thanos)
 	}
 
 	// damage done by Ironman if his roll is greater
-	return dam;
-}
-
-
-// sets room to complete
-int Spiderman::complete()
-{
-	// set space to defeated so when Thanos re-enters it doesn't prompt battle again
-	if (defeated == 0)
-	{
-		defeated = 1;
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+	return spiderRoll;
 }

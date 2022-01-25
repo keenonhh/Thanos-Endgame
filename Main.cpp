@@ -7,15 +7,14 @@
 		function so that the user can start the game 
 ******************************************************************************/
 
-#include "Thanos.hpp"
-#include "Hawkeye.hpp"
-#include "Spiderman.hpp"
-#include "Ironman.hpp"
-#include "HULK.hpp"
-#include "Thor.hpp"
-#include "StartSpace.hpp"
-#include "EndGame.hpp"
-#include "Space.hpp"
+#include "characters/Thanos.hpp"
+#include "characters/Hawkeye.hpp"
+#include "characters/Spiderman.hpp"
+#include "characters/Ironman.hpp"
+#include "characters/HULK.hpp"
+#include "characters/Thor.hpp"
+#include "board/Space.hpp"
+#include "run/EndGame.hpp"
 
 int main()
 {
@@ -37,9 +36,9 @@ int main()
 	std::cout << "You may choose your own path but remember 'Each Avenger has a different power level than the last' " << std::endl;
 
 	Thanos thanos;
+
 	// run Thanos EndGame
 	ThanosEndGame.runGame(thanos);
 
-	system("pause");
 	return 0;
 }

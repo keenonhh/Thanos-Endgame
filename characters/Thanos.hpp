@@ -10,16 +10,29 @@
 #ifndef THANOS_HPP
 #define THANOS_HPP
 
-#include "Character.hpp"
+#include "Thanos.hpp"
 
-class Thanos : public Character
+class Thanos
 {
+protected:
+	// base stats for hawkeye
+	int health;
+	int attack;
+	
 public:
-	// set thanos attack based on number of gems
-	void setAttack(int);
+	Thanos();
 
-	// Thanos battle is controlled by characters
-	int battle(Character*){};
+	// to get characters health
+	int getHealth();
+
+	// set the characters health after damage is deducted
+	void setHealth(int);
+
+	// set attack of character
+	virtual void setAttack(int);
+
+	// get characters attack
+	int getAttack();
 };
 
 #endif

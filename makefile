@@ -1,32 +1,35 @@
-output: Main.o EndGame.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o Thanos.o Thor.o
-	g++ Main.o EndGame.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o Thanos.o Thor.o -o output
+output: Main.o EndGame.o Character.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o Thanos.o Thor.o
+	g++ Main.o EndGame.o Character.o Hawkeye.o HULK.o Ironman.o Space.o Spiderman.o Thanos.o Thor.o -o output
 
 Main.o: Main.cpp
 	g++ -c Main.cpp
 
-EndGame.o: EndGame.cpp EndGame.hpp
-	g++ -c EndGame.cpp
+EndGame.o: ./run/EndGame.cpp ./run/EndGame.hpp
+	g++ -c ./run/EndGame.cpp
 
-Hawkeye.o: Hawkeye.cpp Hawkeye.hpp
-	g++ -c Hawkeye.cpp
+Character.o: ./characters/Character.cpp ./characters/Character.hpp
+	g++ -c ./characters/Character.cpp
 
-HULK.o: HULK.cpp HULK.hpp
-	g++ -c HULK.cpp
+Hawkeye.o: ./characters/Hawkeye.cpp ./characters/Hawkeye.hpp
+	g++ -c ./characters/Hawkeye.cpp
 
-Ironman.o: Ironman.cpp Ironman.hpp
-	g++ -c Ironman.cpp
+HULK.o: ./characters/HULK.cpp ./characters/HULK.hpp
+	g++ -c ./characters/HULK.cpp
 
-Space.o: Space.cpp Space.hpp
-	g++ -c Space.cpp
+Ironman.o: ./characters/Ironman.cpp ./characters/Ironman.hpp
+	g++ -c ./characters/Ironman.cpp
 
-Spiderman.o: Spiderman.cpp Spiderman.hpp
-	g++ -c Spiderman.cpp
+Spiderman.o: ./characters/Spiderman.cpp ./characters/Spiderman.hpp
+	g++ -c ./characters/Spiderman.cpp
 
-Thanos.o: Thanos.cpp Thanos.hpp
-	g++ -c Thanos.cpp
+Thanos.o: ./characters/Thanos.cpp ./characters/Thanos.hpp
+	g++ -c ./characters/Thanos.cpp
 
-Thor.o: Thor.cpp Thor.hpp
-	g++ -c Thor.cpp
+Thor.o: ./characters/Thor.cpp ./characters/Thor.hpp
+	g++ -c ./characters/Thor.cpp
+
+Space.o: ./board/Space.cpp ./board/Space.hpp
+	g++ -c ./board/Space.cpp
 
 clean:
-		rm *.o output
+	rm *.o output

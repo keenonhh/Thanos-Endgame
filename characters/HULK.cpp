@@ -11,45 +11,42 @@
 
 HULK::HULK()
 {
+	defeated = false; 
 }
 
 // function to run battle with Thanos
 int HULK::battle(Thanos thanos)
 {
 	srand(time(NULL));
+
 	// roll for hulke and what the damage will be if greater than Thanos roll
 	int hulkRoll = 0;
 
-	// thanos roll equal to his attack function
-	int thanosRoll = 0;
-
-	// damage by Hulk if hulk roll greater than Thanos
-	int dam = 0;
-
 	// Thanos and Hulk battle as long as Thanos hasn't beat hulk already
-	if (defeated == 0)
+	if (!defeated)
 	{
 		// sets attack for Thanos and Hulk as random roll amount, Avenger attack is the unique element of each space
 		std::cout << "\nHULK crashes down in front of you with a powerful thud, prepare to battle" << std::endl;
-		thanosRoll = thanos.getAttack();
+		int opponentRoll = thanos.getAttack();
 		hulkRoll = rand() % 6 + 1 + rand() % 6 + 1 + rand() % 6 + 1 + rand() % 6 + 1;
 
 		// display the results of the rolls
-		std::cout << "Thanos attacks with a power of: " << thanosRoll << std::endl;
+		std::cout << "Thanos attacks with a power of: " << opponentRoll << std::endl;
 		std::cout << "HULK attacks with a power of: " << hulkRoll << std::endl;
 
 		// if Thanos roll greater print message 
-		if (thanosRoll >= hulkRoll)
+		if (opponentRoll >= hulkRoll)
 		{
 			std::cout << "You defeated HULK! You approach and take the Power Gem from your foe" << std::endl << std::endl;
 			std::cout << "Power Gem inserted into Gauntlet" << std::endl << std::endl;
+			defeated = true;
+			hulkRoll = 0;
 		}
 
 		// if Thanos roll lower, Hulk does damage to Thanos and it's subtracted from his health
-		else if (thanosRoll < hulkRoll)
+		else if (opponentRoll < hulkRoll)
 		{
 			std::cout << "HULK smashes you with all of his might, you lose " << hulkRoll << " health" << std::endl;
-			dam = hulkRoll;
 		}
 	}
 
@@ -60,20 +57,5 @@ int HULK::battle(Thanos thanos)
 	}
 
 	// damage done by Hulk if his roll is greater
-	return dam;
-}
-
-// sets room to complete
-int HULK::complete()
-{
-	// set space to defeated so when Thanos re-enters it doesn't prompt battle again
-	if (defeated == 0)
-	{
-		defeated = 1;
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+	return hulkRoll;
 }

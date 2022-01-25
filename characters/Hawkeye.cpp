@@ -9,18 +9,23 @@
 
 #include "Hawkeye.hpp"
 
+Hawkeye::Hawkeye()
+{
+	defeated = false;
+}
+
 // function to run battle with Thanos
-int Hawkeye::battle(Character* opponent)
+int Hawkeye::battle(Thanos thanos)
 {
 	srand(time(NULL));
 	int hawkRoll = 0;
 
 	// Thanos and Hawkeye battle as long as Thanos hasn't beat Hawkeye already
-	if (defeated)
+	if (!defeated)
 	{
 		// sets attack for opponent and Hawkeye as random roll amount, Avenger attack is the unique element of each space
 		std::cout << "\nHawkeye emerges from the shadows with his bow, prepare to battle" << std::endl;
-		int opponentRoll = opponent.getAttack();
+		int opponentRoll = thanos.getAttack();
 		int hawkRoll = (rand() % 3 + 1) + (rand() % 3 + 1) + (rand() % 3 + 1) + (rand() % 3 + 1);
 
 		// display the results of the rolls
@@ -32,6 +37,8 @@ int Hawkeye::battle(Character* opponent)
 		{
 			std::cout << "You defeated Hawkeye! You approach and take the Mind Gem from your foe" << std::endl << std::endl;
 			std::cout << "Mind Gem inserted into Gauntlet" << std::endl << std::endl;
+			defeated = true;
+			hawkRoll = 0;
 		}
 
 		// if Thanos roll lower, Hawkeye does damage to Thanos and it's subtracted from his health

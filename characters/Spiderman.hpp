@@ -14,11 +14,13 @@
 
 class Spiderman : public Character
 {
+private:
+	bool defeated;
+	
 public:
-	// set spiderman attack based on attack multiplier
-	void setAttack(int);
+	Spiderman();
 
-	int battle(Character *);
+	int battle(Thanos thanos);
 };
 
 #endif

@@ -14,11 +14,12 @@
 
 class HULK : public Character
 {
+private:
+	bool defeated = false;
 public:
-	// set HULK attack based on attack multiplier
-	void setAttack(int);
+	HULK();
 
-	int battle(Character *);
+	int battle(Thanos thanos);
 };
 
 #endif

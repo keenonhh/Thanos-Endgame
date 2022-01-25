@@ -14,11 +14,13 @@
 
 class Ironman : public Character
 {
+private:
+	bool defeated;
+	
 public:
-	// set ironman attack based on attack multiplier
-	void setAttack(int);
+	Ironman();
 
-	int battle(Character *);
+	int battle(Thanos thanos);
 };
 
 #endif
