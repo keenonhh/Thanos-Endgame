@@ -9,11 +9,6 @@
 
 #include "Spiderman.hpp"
 
-Spiderman::Spiderman()
-{
-	defeated = false; 
-}
-
 // function to run battle with opponent
 int Spiderman::battle(Thanos thanos)
 {
@@ -31,7 +26,7 @@ int Spiderman::battle(Thanos thanos)
 		spiderRoll = ((rand() % 4 + 1) + (rand() % 4 + 1) + (rand() % 4 + 1) + (rand() % 4 + 1));
 
 		// display the results of the rolls
-		std::cout << "opponent attacks with a power of: " << opponentRoll << std::endl;
+		std::cout << "Thanos attacks with a power of: " << opponentRoll << std::endl;
 		std::cout << "Spider-Man attacks with a power of: " << spiderRoll << std::endl;
 
 		// if opponent roll greater print message
@@ -39,7 +34,7 @@ int Spiderman::battle(Thanos thanos)
 		{
 			std::cout << "You defeated Spider-Man! You approach and take the Reality Gem from your foe" << std::endl << std::endl;
 			std::cout << "Reality Gem inserted into Gauntlet" << std::endl << std::endl;
-			defeated = true;
+			//defeated = true;
 			spiderRoll = 0;
 		}
 

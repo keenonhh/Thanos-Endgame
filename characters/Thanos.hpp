@@ -10,6 +10,9 @@
 #ifndef THANOS_HPP
 #define THANOS_HPP
 
+#include <iostream>
+#include <stdlib.h>
+
 #include "Thanos.hpp"
 
 class Thanos
@@ -29,7 +32,7 @@ public:
 	void setHealth(int);
 
 	// set attack of character
-	virtual void setAttack(int);
+	void setAttack(int);
 
 	// get characters attack
 	int getAttack();

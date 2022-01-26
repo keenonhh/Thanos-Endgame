@@ -9,11 +9,6 @@
 
 #include "Hawkeye.hpp"
 
-Hawkeye::Hawkeye()
-{
-	defeated = false;
-}
-
 // function to run battle with Thanos
 int Hawkeye::battle(Thanos thanos)
 {
@@ -37,7 +32,7 @@ int Hawkeye::battle(Thanos thanos)
 		{
 			std::cout << "You defeated Hawkeye! You approach and take the Mind Gem from your foe" << std::endl << std::endl;
 			std::cout << "Mind Gem inserted into Gauntlet" << std::endl << std::endl;
-			defeated = true;
+			//defeated = true;
 			hawkRoll = 0;
 		}
 

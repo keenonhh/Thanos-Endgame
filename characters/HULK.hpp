@@ -14,11 +14,7 @@
 
 class HULK : public Character
 {
-private:
-	bool defeated = false;
 public:
-	HULK();
-
 	int battle(Thanos thanos);
 };
 

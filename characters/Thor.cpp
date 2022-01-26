@@ -9,11 +9,6 @@
 
 #include "Thor.hpp"
 
-Thor::Thor()
-{
-	defeated = false;; 
-}
-
 // function to run battle with opponent
 int Thor::battle(Thanos thanos)
 {
@@ -30,7 +25,7 @@ int Thor::battle(Thanos thanos)
 		thorRoll = rand() % 7 + 1 + rand() % 7 + 1 + rand() % 7 + 1 + rand() % 7 + 1;
 		
 		// display the results of the rolls
-		std::cout << "opponent attacks with a power of: " << opponentRoll << std::endl;
+		std::cout << "Thanos attacks with a power of: " << opponentRoll << std::endl;
 		std::cout << "Thor attacks with a power of: " << thorRoll << std::endl;
 
 		// if opponent roll greater print message
@@ -38,7 +33,7 @@ int Thor::battle(Thanos thanos)
 		{
 			std::cout << "You defeated Thor! You approach and take the Soul Gem from your foe" << std::endl << std::endl;
 			std::cout << "Soul Gem inserted into Gauntlet" << std::endl << std::endl;
-			defeated = true;
+			//defeated = true;
 			thorRoll = 0;
 		}
 

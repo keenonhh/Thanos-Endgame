@@ -14,12 +14,7 @@
 
 class Ironman : public Character
 {
-private:
-	bool defeated;
-	
 public:
-	Ironman();
-
 	int battle(Thanos thanos);
 };
 

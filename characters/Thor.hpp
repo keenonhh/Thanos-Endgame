@@ -14,12 +14,7 @@
 
 class Thor : public Character
 {
-private: 
-	bool defeated;
-	
 public:
-	Thor();
-
 	int battle(Thanos thanos);
 };
 

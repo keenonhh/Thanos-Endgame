@@ -14,12 +14,7 @@
 
 class Spiderman : public Character
 {
-private:
-	bool defeated;
-	
 public:
-	Spiderman();
-
 	int battle(Thanos thanos);
 };
 

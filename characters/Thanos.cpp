@@ -8,8 +8,6 @@
 
 #include "Thanos.hpp"
 
-#include <stdlib.h>
-
 Thanos::Thanos()
 {
 	health = 100;
@@ -25,6 +23,7 @@ void Thanos::setHealth(int dmgIn)
 // sets thanos attack based on the number of gems collected
 void Thanos::setAttack(int gem)
 {
+	std::cout << "Number of gems: " << gem << std::endl;
 	attack = ((gem * (rand() % 6 + 1)) + (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1));
 }
 

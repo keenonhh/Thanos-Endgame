@@ -14,12 +14,7 @@
 
 class Hawkeye : public Character
 {
-private:
-	bool defeated;
-
 public:
-	Hawkeye();
-
 	int battle(Thanos thanos);
 };
 

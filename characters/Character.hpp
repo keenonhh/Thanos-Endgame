@@ -11,10 +11,12 @@ protected:
 	bool defeated;
 
 public:
+	Character();
+	
 	// function for battling Thanos
 	virtual int battle(Thanos thanos) = 0;
 
-	void setDefeated(bool defeated);
+	void setDefeated(bool);
 	bool getDefeated();
 };
 

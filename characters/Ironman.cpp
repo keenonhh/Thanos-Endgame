@@ -9,10 +9,6 @@
 
 #include "Ironman.hpp"
 
-Ironman::Ironman(){
-	defeated = false; 
-}
-
 // function to run battle with opponent
 int Ironman::battle(Thanos thanos)
 {
@@ -29,7 +25,7 @@ int Ironman::battle(Thanos thanos)
 		ironRoll = ((rand() % 5 + 1) + (rand() % 5 + 1) + (rand() % 5 + 1) + (rand() % 5 + 1));
 		
 		// display the results of the rolls
-		std::cout << "opponent attacks with a power of: " << opponentRoll << std::endl;
+		std::cout << "Thanos attacks with a power of: " << opponentRoll << std::endl;
 		std::cout << "Ironman attacks with a power of: " << ironRoll << std::endl;
 
 		// if opponent roll greater print message
@@ -37,7 +33,7 @@ int Ironman::battle(Thanos thanos)
 		{
 			std::cout << "You defeated Ironman! You approach and take the Vision Gem from your foe" << std::endl << std::endl;
 			std::cout << "Vision Gem inserted into Gauntlet" << std::endl << std::endl;
-			defeated = true;
+			//defeated = true;
 			ironRoll = 0;
 		}
 		

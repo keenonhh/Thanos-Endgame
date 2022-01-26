@@ -9,11 +9,6 @@
 
 #include "HULK.hpp"
 
-HULK::HULK()
-{
-	defeated = false; 
-}
-
 // function to run battle with Thanos
 int HULK::battle(Thanos thanos)
 {
@@ -39,7 +34,7 @@ int HULK::battle(Thanos thanos)
 		{
 			std::cout << "You defeated HULK! You approach and take the Power Gem from your foe" << std::endl << std::endl;
 			std::cout << "Power Gem inserted into Gauntlet" << std::endl << std::endl;
-			defeated = true;
+			//defeated = true;
 			hulkRoll = 0;
 		}
 

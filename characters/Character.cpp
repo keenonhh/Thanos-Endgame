@@ -9,10 +9,13 @@
 
 #include "Character.hpp"
 
+Character::Character(): defeated(false)
+{}
+
 // sets Character defeated status
-void Character::setDefeated(bool defeated)
+void Character::setDefeated(bool isDefeated)
 {
-	defeated = this->defeated;
+	defeated = isDefeated;
 }
 
 // gets Character defeated status
