@@ -1,21 +1,22 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the main function for Thanos EndGame that displays the
-		rules and sets what the premise is and then calls the runGame
-		function so that the user can start the game 
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the main function for Thanos EndGame that 
+					displays the rules and sets what the premise is 
+					and then calls the runGame function so that the 
+					user can start the game 
 ******************************************************************************/
 
-#include "Thanos.hpp"
-#include "Hawkeye.hpp"
-#include "Spiderman.hpp"
-#include "Ironman.hpp"
-#include "HULK.hpp"
-#include "Thor.hpp"
-#include "StartSpace.hpp"
-#include "EndGame.hpp"
-#include "Space.hpp"
+#include "characters/Character.hpp"
+#include "characters/Thanos.hpp"
+#include "characters/Hawkeye.hpp"
+#include "characters/Spiderman.hpp"
+#include "characters/Ironman.hpp"
+#include "characters/HULK.hpp"
+#include "characters/Thor.hpp"
+#include "board/Space.hpp"
+#include "run/EndGame.hpp"
 
 int main()
 {
@@ -36,10 +37,11 @@ int main()
 	std::cout << "before the arc reactors vaporize everything inside including you and the Infinity Gems" << std::endl << std::endl;
 	std::cout << "You may choose your own path but remember 'Each Avenger has a different power level than the last' " << std::endl;
 
+	// create Thanos object to be faught by Avengers
 	Thanos thanos;
+
 	// run Thanos EndGame
 	ThanosEndGame.runGame(thanos);
 
-	system("pause");
 	return 0;
 }

@@ -1,12 +1,13 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the EndGame class function defintion file that 
-		contains the functions for running the game, printing the 
-		game board, linking the spaces of the board as well as the
-		game stats for number of gems collected, steps until game
-		over, and Thanos current health after each battle 
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the EndGame class function defintion file 
+					that contains the functions for running the game, 
+					printing the game board, linking the spaces of the 
+					board as well as the game stats for number of gems 
+					collected, steps until game over, and Thanos current
+					health after each battle 
 ******************************************************************************/
 
 #include "EndGame.hpp"
@@ -17,21 +18,29 @@ void EndGame::runGame(Thanos thanos)
 	// Links the game board spaces based on pointers
 	setSpaces();
 
+	// Allows character type to be passed to virtual battle function
+	// within character class and then overridden by the derived classes
+	hawkeye = new Hawkeye();
+	ironman = new Ironman();
+	spiderman = new Spiderman();
+	thor = new Thor();
+	hulk = new HULK();
+
 	// set the space pointer object to the current space
 	Space* currSpace;
 
 	// initialize current Space to the Start space
 	currSpace = space1;
 
+	// point to current Avenger being faught to
+	// get correct battle function and defeated status
+	Character *currAvenger;
+	currAvenger = NULL;
+
 	// These are counters for game win or lose conditions 
 	int gems = 0;
 	int step = 20;
-
-	// sets damage to Thanos as the roll of the Avenger
 	int damage = 0;
-
-	// This is the container for holding Thanos' Infinity Gems
-	std::queue<std::string> gauntlet;
 
 	// Prints the initial board
 	printBoard(currSpace);
@@ -40,53 +49,78 @@ void EndGame::runGame(Thanos thanos)
 	currSpace = currSpace->menu(currSpace);
 
 	// Run while end conditions are not met
-	while (thanos.getHealth() > 0 && gauntlet.size() != 5 && step != 0)
+	while (thanos.getHealth() > 0 && gems != 5 && step != 0)
 	{
-		// set damage equal to that of the roll of the avenger who space Thanos is on
-		damage = currSpace->battle(thanos);
+		// if thanos is in Hawkeye room this is the board
+		if (currSpace->getName() == "Hawkeye Room")
+		{
+			currAvenger = hawkeye;
+			thanos.setAttack(gems);
+			damage = hawkeye->battle(thanos);
+		}
 
-		// gems is the damage multiplier for Thanos attack equal to the number of gems in his gauntlet
-		gems = gauntlet.size();
+		// if thanos is in spiderman room this is the board
+		else if (currSpace->getName() == "Spider-Man Room")
+		{
+			currAvenger = spiderman;
+			thanos.setAttack(gems);
+			damage = spiderman->battle(thanos);
+		}
 
-		// set Thanos attack based on number of gems he currently has
-		thanos.setAttack(gems);
-		
+		// if thanos is in Ironman room this is the board
+		else if (currSpace->getName() == "Ironman Room")
+		{
+			currAvenger = ironman;
+			thanos.setAttack(gems);
+			damage = ironman->battle(thanos);
+		}
+
+		// if thanos is in HULK room this is the board
+		else if (currSpace->getName() == "HULK Room")
+		{	
+			currAvenger = hulk;
+			thanos.setAttack(gems);
+			damage = hulk->battle(thanos);
+		}
+
+		// if thanos is in Thor room this is the board
+		else if (currSpace->getName() == "Thor Room")
+		{
+			currAvenger = thor;
+			thanos.setAttack(gems);
+			damage = thor->battle(thanos);
+		}
+
 		// Thanos takes damage if he does not beat avenger and a step is deducted
 		if (damage != 0)
 		{
-			thanos.damage(damage);
+			thanos.setHealth(damage);
 		}
-
+		
 		// decrement steps whether Thanos wins battle or not
 		step--;
 
 		// Add a gem to Thanos Guantlet if he beat Avenger and he's not in the start room or going back to an already completed space
-		if (damage == 0 && currSpace != space1 && currSpace->complete() == 1)
+		if (damage == 0 && currSpace != space1 && !(currAvenger->getDefeated()))
 		{
-			currSpace->complete();
+			currAvenger->setDefeated(true);
 			// as long as gauntlet container does not already have 5 gems, this is max size for container being enforced
-			if (gauntlet.size() != 5)
+			if (gems != 5)
 			{
 				// gauntlet is a queue that holds strings so as each Avenger is defeated a gem is pushed on the queue
-				gauntlet.push("Gem");
+				gems++;
 			}
 		}
 
 		// If game is not over then print Thanos stats and print current board
-		if (thanos.getHealth() > 0 && gauntlet.size() != 5 && step != 0)
+		if (thanos.getHealth() > 0 && gems != 5 && step != 0)
 		{
 			printBoard(currSpace);
-			std::cout << "\nThanos Health: " << thanos.getHealth() << std::endl;
 
-			// if gauntlet is not empty print the number of gems Thanos has based on size of container
-			if (!gauntlet.empty())
-			{
-				std::cout << "Thanos Gems: ";
-				std::cout << gauntlet.size();
-				std::cout << std::endl;
-			}
-			
+			std::cout << "\nThanos Health: " << thanos.getHealth() << std::endl;
+			std::cout << "Thanos Gems: " << gems << std::endl;
 			std::cout << "Steps until collapse: " << step << std::endl;
+
 			currSpace = currSpace->menu(currSpace);
 		}
 	}
@@ -106,7 +140,7 @@ void EndGame::runGame(Thanos thanos)
 	}
 
 	// if Thanos beats all Avengers and collects all gems player wins
-	else if (gauntlet.size() == 5)
+	else if (gems == 5)
 	{
 		std::cout << "You have defeated The Avengers and collected all the Infinity Gems!" << std::endl;
 		std::cout << "You snap your fingers and bring balance to The Universe!" << std::endl;
@@ -118,57 +152,54 @@ void EndGame::runGame(Thanos thanos)
 void EndGame::setSpaces()
 {
 	// allocates memory for the spaces as well as names them
-	space1 = new StartSpace();
+	space1 = new Space();
 	space1->setName("Start Room");
-	space2 = new Hawkeye();
+	space2 = new Space();
 	space2->setName("Hawkeye Room");
-	space3 = new Spiderman();
+	space3 = new Space();
 	space3->setName("Spider-Man Room");
-	space4 = new Ironman();
+	space4 = new Space();
 	space4->setName("Ironman Room");
-	space5 = new HULK();
+	space5 = new Space();
 	space5->setName("HULK Room");
-	space6 = new Thor();
+	space6 = new Space();
 	space6->setName("Thor Room");
 
-
-	// gives spacial orientation based off what rooms are in which direction in relation to current room
-	// space one can move to all but the 6th space
+	// Start space
 	space1->setFwd(space5);
 	space1->setBack(space3);
 	space1->setLeft(space4);
 	space1->setRight(space2);
 
-	// space 2 only has space 1 connected to the left of it
+	// Hawkeye space
 	space2->setFwd(NULL);
 	space2->setBack(NULL);
 	space2->setLeft(space1);
 	space2->setRight(NULL);
 
-	// space 3 only has space 1 connected to the front of it
+	// spiderman space
 	space3->setFwd(space1);
 	space3->setBack(NULL);
 	space3->setLeft(NULL);
 	space3->setRight(NULL);
 
-	// space 4 only has space 1 connected to the right of it
+	// Ironman space
 	space4->setFwd(NULL);
 	space4->setBack(NULL);
 	space4->setLeft(NULL);
 	space4->setRight(space1);
 
-	// space 5 has space 1 connected to the back and space 6 conected to the front
+	// Hulk space
 	space5->setFwd(space6);
 	space5->setBack(space1);
 	space5->setLeft(NULL);
 	space5->setRight(NULL);
 
-	// space 6 only has space 5 connected to the back of it
+	// Thor space
 	space6->setFwd(NULL);
 	space6->setBack(space5);
 	space6->setLeft(NULL);
 	space6->setRight(NULL);
-
 }
 
 // prints the current board with which space Thanos is currently in
@@ -316,4 +347,10 @@ EndGame::~EndGame()
 	delete space4;
 	delete space5;
 	delete space6;
+
+	delete hawkeye;
+	delete spiderman;
+	delete thor;
+	delete hulk;
+	delete ironman;
 }

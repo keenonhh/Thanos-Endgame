@@ -1,13 +1,14 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the function definition file for the space class that
-		contains the functions for printing menu options for the user 
-		to select which space to move to and updates the current
-		board space based on the input. Also contains the basic setter
-		and getter functions for which space user is in and to get
-		which space is in which direction
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/25/22
+** Description: 	This is the function definition file for the space 
+					class that contains the functions for printing menu 
+					options for the user to select which space to move 
+					to and updates the current board space based on the 
+					input. Also contains the basic setter and getter 
+					functions for which space user is in and to get
+					which space is in which direction
 ******************************************************************************/
 
 #include "Space.hpp"
