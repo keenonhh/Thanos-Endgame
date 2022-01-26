@@ -1,44 +1,44 @@
 /******************************************************************************
-** Program name:	CS162 Final_opponent_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the Ironman class function definition file that
-		contains the functions for Ironman to battle opponent and 
-		set Ironamn space to complete once opponent wins the battle
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the Ironman class function definition file 
+					that contains the function for Ironman to battle 
+					Thanos
 ******************************************************************************/
 
 #include "Ironman.hpp"
 
-// function to run battle with opponent
+// function to run battle with thanos
 int Ironman::battle(Thanos thanos)
 {
 	srand(time(NULL));
-	// roll for ironman and what the damage will be if greater than opponent roll
+	// roll for ironman damage
 	int ironRoll = 0;
 
-	// opponent and Ironman battle as long as opponent hasn't beat Ironman already
+	// thanos and Ironman battle as long as Ironman is defeated already
 	if (!defeated)
 	{
-		// sets attack for opponent and Ironamn as random roll amount, Avenger attack is the unique element of each space
 		std::cout << "\nIronman zooms towards in his power suit, prepare to battle" << std::endl;
-		int opponentRoll = thanos.getAttack();
+
+		// sets attack for thanos and Ironamn as random roll amount, Avenger attack is the unique element of each space
+		int thanosRoll = thanos.getAttack();
 		ironRoll = ((rand() % 5 + 1) + (rand() % 5 + 1) + (rand() % 5 + 1) + (rand() % 5 + 1));
 		
 		// display the results of the rolls
-		std::cout << "Thanos attacks with a power of: " << opponentRoll << std::endl;
+		std::cout << "Thanos attacks with a power of: " << thanosRoll << std::endl;
 		std::cout << "Ironman attacks with a power of: " << ironRoll << std::endl;
 
-		// if opponent roll greater print message
-		if (opponentRoll >= ironRoll)
+		// if thanos roll greater print message
+		if (thanosRoll >= ironRoll)
 		{
 			std::cout << "You defeated Ironman! You approach and take the Vision Gem from your foe" << std::endl << std::endl;
 			std::cout << "Vision Gem inserted into Gauntlet" << std::endl << std::endl;
-			//defeated = true;
 			ironRoll = 0;
 		}
 		
-		// if opponent roll lower, Ironamn does damage to opponent and it's subtracted from his health
-		else if (opponentRoll < ironRoll)
+		// if thanos roll lower, Ironman does damage to thanos and it's subtracted from his health
+		else if (thanosRoll < ironRoll)
 		{
 			std::cout << "Ironman hits you with all of his rockets, you lose " << ironRoll << " health" << std::endl;
 		}

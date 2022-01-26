@@ -1,10 +1,10 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the Hulk class function definition file that
-		contains the functions for Hulk to battle Thanos and 
-		set Hulk space to complete once Thanos wins the battle
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the Hulk class function definition file 
+					that contains the function for Hulk to battle 
+					Thanos
 ******************************************************************************/
 
 #include "HULK.hpp"
@@ -14,16 +14,17 @@ int HULK::battle(Thanos thanos)
 {
 	srand(time(NULL));
 
-	// roll for hulke and what the damage will be if greater than Thanos roll
+	// roll for damage hulk does
 	int hulkRoll = 0;
 
-	// Thanos and Hulk battle as long as Thanos hasn't beat hulk already
+	// Thanos and Hulk battle as long as Hulk is already defeated
 	if (!defeated)
 	{
-		// sets attack for Thanos and Hulk as random roll amount, Avenger attack is the unique element of each space
 		std::cout << "\nHULK crashes down in front of you with a powerful thud, prepare to battle" << std::endl;
+
+		// sets attack for Thanos and Hulk as random roll amount, Avenger attack is the unique element of each character
 		int opponentRoll = thanos.getAttack();
-		hulkRoll = rand() % 6 + 1 + rand() % 6 + 1 + rand() % 6 + 1 + rand() % 6 + 1;
+		hulkRoll = ((rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1) + (rand() % 6 + 1));
 
 		// display the results of the rolls
 		std::cout << "Thanos attacks with a power of: " << opponentRoll << std::endl;
@@ -34,7 +35,7 @@ int HULK::battle(Thanos thanos)
 		{
 			std::cout << "You defeated HULK! You approach and take the Power Gem from your foe" << std::endl << std::endl;
 			std::cout << "Power Gem inserted into Gauntlet" << std::endl << std::endl;
-			//defeated = true;
+			// if hulkRoll is less than thanos roll Hul does no damage
 			hulkRoll = 0;
 		}
 

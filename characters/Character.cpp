@@ -3,8 +3,9 @@
 ** Author:	        Keenon Hunsaker
 ** Date:	        1/23/22
 ** Description:     This is the parent class definition file that 
-		contains the function for setting up all the characters attributes
-        and functionality based on the current game status
+					contains the function for setting up all the 
+					characters attributes and functionality based on 
+					the current game status
 ******************************************************************************/
 
 #include "Character.hpp"

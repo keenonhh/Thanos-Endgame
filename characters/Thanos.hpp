@@ -1,10 +1,11 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the header file for the Thanos class which is used
-		by the user. It has functions to set Thanos health and attack
-		power as well as subtract damage done by the enemy Avenger
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the header file for the Thanos class 
+					which is used by the user. It has functions to 
+					set Thanos health and attack power as well as 
+					subtract damage done by the enemy Avenger
 ******************************************************************************/
 
 #ifndef THANOS_HPP
@@ -18,23 +19,23 @@
 class Thanos
 {
 protected:
-	// base stats for hawkeye
+	// base stats for Thanos
 	int health;
 	int attack;
 	
 public:
 	Thanos();
 
-	// to get characters health
+	// get Thanos health
 	int getHealth();
 
-	// set the characters health after damage is deducted
+	// set Thanos health after damage is deducted
 	void setHealth(int);
 
-	// set attack of character
+	// set Thanos attack
 	void setAttack(int);
 
-	// get characters attack
+	// get Thanos attack
 	int getAttack();
 };
 

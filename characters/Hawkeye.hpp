@@ -1,10 +1,10 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description:	This is the header file for the Hawkeye class that contain the 
-		functions for having Hawkeye battle Thanos and then setting the 
-		space to complete	
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description:		This is the header file for the Hawkeye class that 
+					contains the function for having Hawkeye battle 
+					Thanos and if Hawkeye has already been defeated
 ******************************************************************************/
 
 #ifndef HAWKEYE_HPP
@@ -15,7 +15,7 @@
 class Hawkeye : public Character
 {
 public:
-	int battle(Thanos thanos);
+	int battle(Thanos thanos) override;
 };
 
 #endif

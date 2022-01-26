@@ -1,10 +1,9 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the header file for the Ironman class that contain the 
-		functions for having Ironman battle Thanos and then setting the 
-		space to complete
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the header file for the Ironman class that
+					contains the function for having Ironman battle Thanos 
 ******************************************************************************/
 
 #ifndef IRONMAN_HPP
@@ -15,7 +14,7 @@
 class Ironman : public Character
 {
 public:
-	int battle(Thanos thanos);
+	int battle(Thanos thanos) override;
 };
 
 #endif

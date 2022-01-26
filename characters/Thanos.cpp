@@ -2,8 +2,9 @@
 ** Program name:	Thanos_Endgame
 ** Author:			Keenon Hunsaker
 ** Date:			1/23/22
-** Description: 	This is the Thanos class function definition file that 
-					inherits from the base Thanos class
+** Description: 	This is the Thanos class function definition file 
+					that contains the functions for Thanos attack and
+					health stats
 ******************************************************************************/
 
 #include "Thanos.hpp"

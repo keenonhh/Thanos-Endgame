@@ -1,10 +1,10 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description:	This is the header file for the Hulk class that contain the 
-		functions for having Hulk battle Thanos and then setting the 
-		space to complete
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description:		This is the header file for the Hulk class that 
+					contains the function for having Hulk battle 
+					Thanos and if Hulk has already been defeated
 ******************************************************************************/
 	
 #ifndef HULK_HPP
@@ -15,9 +15,7 @@
 class HULK : public Character
 {
 public:
-	int battle(Thanos thanos);
+	int battle(Thanos thanos) override;
 };
 
 #endif
-
-
