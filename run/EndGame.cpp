@@ -1,12 +1,13 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the EndGame class function defintion file that 
-		contains the functions for running the game, printing the 
-		game board, linking the spaces of the board as well as the
-		game stats for number of gems collected, steps until game
-		over, and Thanos current health after each battle 
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the EndGame class function defintion file 
+					that contains the functions for running the game, 
+					printing the game board, linking the spaces of the 
+					board as well as the game stats for number of gems 
+					collected, steps until game over, and Thanos current
+					health after each battle 
 ******************************************************************************/
 
 #include "EndGame.hpp"
@@ -31,6 +32,8 @@ void EndGame::runGame(Thanos thanos)
 	// initialize current Space to the Start space
 	currSpace = space1;
 
+	// point to current Avenger being faught to
+	// get correct battle function and defeated status
 	Character *currAvenger;
 	currAvenger = NULL;
 

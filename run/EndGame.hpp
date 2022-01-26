@@ -1,18 +1,17 @@
 /******************************************************************************
-** Program name:	CS162 Final_Thanos_Endgame
-** Author:	Keenon Hunsaker
-** Date:	3/14/19
-** Description: This is the EndGame class header file that declares the function
-		to run the game and set up and print the linked board spaces
-		as the game progresses. Also contains the pointers to link 
-		the spaces as well as a Thanos class object
+** Program name:	Thanos_Endgame
+** Author:			Keenon Hunsaker
+** Date:			1/24/22
+** Description: 	This is the EndGame class header file that declares 
+					the functions to run the game and set up and print 
+					the linked board spaces as the game progresses. Also 
+					contains the pointers to link the spaces
 ******************************************************************************/
 
 #ifndef ENDGAME_HPP
 #define ENDGAME_HPP
 
 #include <iostream>
-#include <queue>
 #include <string>
 
 #include "../characters/Character.hpp"
