@@ -1,5 +1,5 @@
 # Thanos-Endgame
-Command line based RPG game implementing object oriented design principals and polymorphism. 
+Command line based RPG game implementing object oriented design principles and polymorphism. 
 
 The main premise of the game is you're Thanos trying to collect the infinity Gems from 5 of the Avengers located within the Avenger's Headquarters. 
 
