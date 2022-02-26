@@ -29,7 +29,7 @@ public:
 
 	// if the avenger has already been defeated
 	void setDefeated(bool);
-	bool getDefeated();
+	bool getDefeated() const;
 };
 
 #endif
