@@ -27,7 +27,7 @@ public:
 	Thanos();
 
 	// get Thanos health
-	int getHealth();
+	int getHealth() const;
 
 	// set Thanos health after damage is deducted
 	void setHealth(int);
@@ -36,7 +36,7 @@ public:
 	void setAttack(int);
 
 	// get Thanos attack
-	int getAttack();
+	int getAttack() const;
 };
 
 #endif
