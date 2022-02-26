@@ -29,13 +29,13 @@ void Thanos::setAttack(int gem)
 }
 
 // gets attack power for character
-int Thanos::getAttack()
+int Thanos::getAttack() const
 {
 	return attack;
 }
 
 // gets Thanos Health for displaying stats
-int Thanos::getHealth()
+int Thanos::getHealth() const
 {
 	return health;
 }

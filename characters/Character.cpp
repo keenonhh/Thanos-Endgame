@@ -14,13 +14,13 @@ Character::Character(): defeated(false)
 {}
 
 // sets Character defeated status
-void Character::setDefeated(bool isDefeated)
+void Character::setDefeated(bool defeated)
 {
-	defeated = isDefeated;
+	this->defeated = defeated;
 }
 
 // gets Character defeated status
-bool Character::getDefeated()
+bool Character::getDefeated() const
 {
 	return defeated;
 }

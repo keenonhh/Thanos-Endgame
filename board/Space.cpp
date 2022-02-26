@@ -72,7 +72,6 @@ Space* Space::menu(Space* currSpace)
 			std::cin.clear();
 			std::cin.ignore();
 			std::cout << "\nInvalid input. Try again." << std::endl;
-			std::cin >> selection;
 		}
 
 		else
